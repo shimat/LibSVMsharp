@@ -1,13 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{AC04337C-E542-4BE9-8DBD-5B44535299E2}</ProjectGuid>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net8;net48</TargetFrameworks>
     <AssemblyTitle>LibSVMsharp</AssemblyTitle>
     <Product>LibSVMsharp</Product>
     <Copyright>Copyright ©  2014</Copyright>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
     <PlatformTarget>x64</PlatformTarget>
-    <PostBuildEvent />
+    <LangVersion>12</LangVersion>
+    <NoWarn>CA1401;</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -18,7 +17,7 @@
   <PropertyGroup>
     <PostBuildEvent />
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
