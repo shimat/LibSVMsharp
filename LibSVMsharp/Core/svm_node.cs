@@ -5,12 +5,11 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibSVMsharp.Core
+namespace LibSVMsharp.Core;
+
+[StructLayout(LayoutKind.Sequential)]
+public struct svm_node
 {
-    [StructLayout(LayoutKind.Sequential)]
-    public struct svm_node
-    {
-        internal int index;
-        internal double value;
-    }
+    internal int index;
+    internal double value;
 }

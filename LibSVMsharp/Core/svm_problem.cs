@@ -5,13 +5,12 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibSVMsharp.Core
+namespace LibSVMsharp.Core;
+
+[StructLayout(LayoutKind.Sequential)]
+public struct svm_problem
 {
-    [StructLayout(LayoutKind.Sequential)]
-    public struct svm_problem
-    {
-        public int l;
-        public IntPtr y; // double*
-        public IntPtr x; // svm_node**
-    }
+    public int l;
+    public IntPtr y; // double*
+    public IntPtr x; // svm_node**
 }

@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSVMsharp", "LibSVMsharp\LibSVMsharp.csproj", "{AC04337C-E542-4BE9-8DBD-5B44535299E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSVMsharp", "LibSVMsharp\LibSVMsharp.csproj", "{AC04337C-E542-4BE9-8DBD-5B44535299E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{B7C949C2-345F-404F-BD38-4F2C0519A5F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSVMsharp.Examples.Classification", "LibSVMsharp.Examples.Classification\LibSVMsharp.Examples.Classification.csproj", "{40F859AD-241A-4379-831C-8FB69BE6A8B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSVMsharp.Examples.Classification", "LibSVMsharp.Examples.Classification\LibSVMsharp.Examples.Classification.csproj", "{40F859AD-241A-4379-831C-8FB69BE6A8B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSVMsharp.Examples.RapidPrediction", "LibSVMsharp.Examples.RapidPrediction\LibSVMsharp.Examples.RapidPrediction.csproj", "{FFDF7EA5-53DA-4DF7-9DD8-E4E7DE2B5AB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSVMsharp.Examples.RapidPrediction", "LibSVMsharp.Examples.RapidPrediction\LibSVMsharp.Examples.RapidPrediction.csproj", "{FFDF7EA5-53DA-4DF7-9DD8-E4E7DE2B5AB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibSVMSharp.Tests", "LibSVMSharp.Tests\LibSVMSharp.Tests.csproj", "{2DE0BD3C-C37B-4B23-9533-2F91C1DD15C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSVMSharp.Tests", "LibSVMSharp.Tests\LibSVMSharp.Tests.csproj", "{2DE0BD3C-C37B-4B23-9533-2F91C1DD15C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F41B08D2-3D78-401E-9773-CA850D7744CD}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

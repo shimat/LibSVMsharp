@@ -1,14 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{FFDF7EA5-53DA-4DF7-9DD8-E4E7DE2B5AB6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <TargetFramework>net48</TargetFramework>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <AssemblyTitle>LibSVMsharp.Examples.RapidPrediction</AssemblyTitle>
     <Product>LibSVMsharp.Examples.RapidPrediction</Product>
     <Copyright>Copyright ©  2014</Copyright>
     <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>

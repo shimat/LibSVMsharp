@@ -1,14 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{40F859AD-241A-4379-831C-8FB69BE6A8B1}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <TargetFramework>net48</TargetFramework>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <AssemblyTitle>LibSVMsharp.Examples.Classification</AssemblyTitle>
     <Product>LibSVMsharp.Examples.Classification</Product>
     <Copyright>Copyright ©  2014</Copyright>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>

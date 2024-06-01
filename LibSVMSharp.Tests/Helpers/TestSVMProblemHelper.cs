@@ -1,14 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace LibSVMSharp.Tests.Helpers
+namespace LibSVMSharp.Tests.Helpers;
+
+[TestClass]
+public class TestSVMProblemHelper
 {
-    [TestClass]
-    public class TestSVMProblemHelper
+    [TestMethod]
+    public void TestMethod1()
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-        }
     }
 }

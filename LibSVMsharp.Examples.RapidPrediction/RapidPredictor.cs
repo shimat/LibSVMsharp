@@ -8,45 +8,44 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibSVMsharp.Examples.RapidPrediction
+namespace LibSVMsharp.Examples.RapidPrediction;
+
+public class RapidPredictor : IDisposable
 {
-    public class RapidPredictor : IDisposable
+    private IntPtr _ptr_model = IntPtr.Zero;
+
+    public RapidPredictor() : this(null) { }
+    public RapidPredictor(SVMModel model)
     {
-        private IntPtr _ptr_model = IntPtr.Zero;
+        SetModel(model);
+    }
 
-        public RapidPredictor() : this(null) { }
-        public RapidPredictor(SVMModel model)
-        {
-            SetModel(model);
-        }
+    public SVMModel Model { get; private set; }
 
-        public SVMModel Model { get; private set; }
-
-        public void SetModel(SVMModel model)
+    public void SetModel(SVMModel model)
+    {
+        if (model != null)
         {
-            if (model != null)
-            {
-                Model = model.Clone();
-                _ptr_model = SVMModel.Allocate(Model);
-            }
+            Model = model.Clone();
+            _ptr_model = SVMModel.Allocate(Model);
         }
-        public double Predict(SVMNode[] x)
-        {
-            return x.Predict(_ptr_model);
-        }
-        public double PredictProbability(SVMNode[] x, out double[] estimations)
-        {
-            return x.PredictProbability(_ptr_model, out estimations);
-        }
-        public double PredictValues(SVMNode[] x, out double[] values)
-        {
-            return x.PredictValues(_ptr_model, out values);
-        }
-        public void Dispose()
-        {
-            SVMModel.Free(_ptr_model);
-            _ptr_model = IntPtr.Zero;
-            Model = null;
-        }
+    }
+    public double Predict(SVMNode[] x)
+    {
+        return x.Predict(_ptr_model);
+    }
+    public double PredictProbability(SVMNode[] x, out double[] estimations)
+    {
+        return x.PredictProbability(_ptr_model, out estimations);
+    }
+    public double PredictValues(SVMNode[] x, out double[] values)
+    {
+        return x.PredictValues(_ptr_model, out values);
+    }
+    public void Dispose()
+    {
+        SVMModel.Free(_ptr_model);
+        _ptr_model = IntPtr.Zero;
+        Model = null;
     }
 }
