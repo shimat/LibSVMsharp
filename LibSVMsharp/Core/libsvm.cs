@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Microsoft.Win32.SafeHandles;
 
 namespace LibSVMsharp.Core
 {
@@ -12,13 +10,14 @@ namespace LibSVMsharp.Core
     /// </summary>
     public static class libsvm
     {
-        public static string VERSION = "3.23";
+        public static readonly string VERSION = "3.23";
 
         /// <param name="prob">svm_problem</param>
         /// <param name="param">svm_parameter</param>
         /// <returns>svm_model</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr svm_train(IntPtr prob, IntPtr param);
+
         /// <param name="prob">svm_problem</param>
         /// <param name="param">svm_parameter</param>
         /// <param name="nr_fold">int</param>
@@ -31,6 +30,7 @@ namespace LibSVMsharp.Core
         /// <returns>bool</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern int svm_save_model(IntPtr model_file_name, IntPtr model);
+
         /// <param name="model_file_name">string</param>
         /// <returns>svm_model</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
@@ -40,22 +40,27 @@ namespace LibSVMsharp.Core
         /// <returns>int</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern int svm_get_svm_type(IntPtr model);
+
         /// <param name="model">svm_model</param>
         /// <returns>int</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern int svm_get_nr_class(IntPtr model);
+
         /// <param name="model">svm_model</param>
         /// <param name="label">int[]</param>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern void svm_get_labels(IntPtr model, IntPtr label);
+
         /// <param name="model">svm_model</param>
         /// <param name="label">int[]</param>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern void svm_get_sv_indices(IntPtr model, IntPtr sv_indices);
+
         /// <param name="model">svm_model</param>
         /// <returns>int</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern int svm_get_nr_sv(IntPtr model);
+
         /// <param name="model">svm_model</param>
         /// <returns>double</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
@@ -67,11 +72,13 @@ namespace LibSVMsharp.Core
         /// <returns>double</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern double svm_predict_values(IntPtr model, IntPtr x, IntPtr dec_values);
+
         /// <param name="model">svm_model</param>
         /// <param name="dec_values">double[]</param>
         /// <returns>double</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern double svm_predict(IntPtr model, IntPtr x);
+
         /// <param name="model">svm_model</param>
         /// <param name="x">svm_node[]</param>
         /// <param name="dec_values">double[]</param>
@@ -82,9 +89,11 @@ namespace LibSVMsharp.Core
         /// <param name="model_ptr">svm_model</param>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern void svm_free_model_content(IntPtr model_ptr);
+
         /// <param name="model_ptr_ptr">svm_model*</param>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern void svm_free_and_destroy_model(ref IntPtr model_ptr_ptr);
+
         /// <param name="param">svm_parameter</param>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern void svm_destroy_param(IntPtr param);
@@ -94,6 +103,7 @@ namespace LibSVMsharp.Core
         /// <returns>string</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr svm_check_parameter(IntPtr prob, IntPtr param);
+
         /// <param name="model">svm_model</param>
         /// <returns>int</returns>
         [DllImport("libsvm", CallingConvention = CallingConvention.Cdecl)]
