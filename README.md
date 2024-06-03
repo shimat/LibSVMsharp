@@ -5,14 +5,19 @@ This library uses LibSVM version 3.23 with x64 support, released on 15th of July
 
 For more information visit the official [libsvm](http://www.csie.ntu.edu.tw/~cjlin/libsvm/) webpage.
 
+**This fork project will bring the original [ccerhan/LibSVMsharp](https://github.com/ccerhan/LibSVMsharp) project, which is no longer being updated, into .NET (Core) compatible.**
+
+
 ## How to Install
 
-To install LibSVMsharp, download the [Nuget package](https://www.nuget.org/packages/LibSVMsharp) or run the following command in the Package Manager Console:
+To install LibSVMsharp, download the [Nuget package](https://www.nuget.org/packages/LibSVMsharpCore) or run the following command in the Package Manager Console:
 
-`PM> Install-Package LibSVMsharp`
+`PM> Install-Package LibSVMsharpCore`
+
 
 ## License
 LibSVMsharp is released under the MIT License and libsvm is released under the [modified BSD Lisence](http://www.csie.ntu.edu.tw/~cjlin/libsvm/faq.html#f204) which is compatible with many free software licenses such as GPL.
+
 
 ## Example Codes
 
@@ -64,5 +69,3 @@ double[] target = testProblem.Predict(model);
 double correlationCoeff;
 double meanSquaredErr = testProblem.EvaluateRegressionProblem(target, out correlationCoeff);
 ```
-
-
