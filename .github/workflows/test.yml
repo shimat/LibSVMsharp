@@ -22,7 +22,7 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build --no-restore --framework net48 ./LibSVMSharp.Tests/LibSVMSharp.Tests.csproj
+      run: dotnet build --no-restore --framework net48 ./src/LibSVMSharp.Tests/LibSVMSharp.Tests.csproj
       
     - name: Test
       run: dotnet test --no-build --framework net48 --verbosity normal
@@ -42,7 +42,7 @@ jobs:
       run: dotnet restore
           
     - name: Build
-      run: dotnet build --no-restore --framework net8 ./LibSVMSharp.Tests/LibSVMSharp.Tests.csproj
+      run: dotnet build --no-restore --framework net8 ./src/LibSVMSharp.Tests/LibSVMSharp.Tests.csproj
           
     - name: Test
       run: dotnet test --no-build --framework net8 --verbosity normal
