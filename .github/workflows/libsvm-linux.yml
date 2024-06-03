@@ -31,4 +31,9 @@ jobs:
       run: |
         ./vcpkg/vcpkg export libsvm:x64-linux-dynamic --zip --output=libsvm --output-dir=/tmp
         ls /tmp
-      
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: libsvm
+        path: /tmp/libsvm.zip
