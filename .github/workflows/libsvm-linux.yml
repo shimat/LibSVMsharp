@@ -1,0 +1,39 @@
+name: Build libsvm for Linux
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout LibSVMsharp
+      uses: actions/checkout@v4
+    
+    - name: Checkout vcpkg
+      uses: actions/checkout@v4
+      with:
+        repository: microsoft/vcpkg
+        path: vcpkg
+
+    - name: Install vcpkg dependencies
+      run: |
+          sudo apt-get update
+          sudo apt-get install -y tar curl zip unzip
+    
+    - name: Bootstrap
+      run: ./vcpkg/bootstrap-vcpkg.sh
+      
+    - name: Vcpkg install
+      run: ./vcpkg/vcpkg install libsvm:x64-linux-dynamic
+      
+    - name: Vcpkg export
+      run: |
+        ./vcpkg/vcpkg export libsvm:x64-linux-dynamic --zip --output=libsvm --output-dir=/tmp
+        ls /tmp
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: libsvm
+        path: /tmp/libsvm.zip
