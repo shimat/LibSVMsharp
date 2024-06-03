@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net48</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net8</TargetFrameworks>
     <AssemblyTitle>LibSVMsharp</AssemblyTitle>
     <Product>LibSVMsharp</Product>
     <Copyright>Copyright ©  2014</Copyright>
