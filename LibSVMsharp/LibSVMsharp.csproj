@@ -1,12 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8;net48</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net48</TargetFrameworks>
     <AssemblyTitle>LibSVMsharp</AssemblyTitle>
     <Product>LibSVMsharp</Product>
     <Copyright>Copyright ©  2014</Copyright>
     <PlatformTarget>x64</PlatformTarget>
     <LangVersion>12</LangVersion>
     <NoWarn>CA1401;</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>LibSVMsharpCore</PackageId>
+    <Version>0.1.0</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/shimat/LibSVMsharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/shimat/LibSVMsharp.git</RepositoryUrl>
+    <Description>Some text.</Description>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -27,8 +35,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="libsvm.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="native/libsvm.dll" PackagePath="runtimes/win-x64/native" Pack="true" />
+    <None Include="native/liblibsvm.so" PackagePath="runtimes/linux-x64/native" Pack="true" />
   </ItemGroup>
 </Project>
