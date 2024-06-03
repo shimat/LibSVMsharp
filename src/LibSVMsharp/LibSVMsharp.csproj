@@ -15,7 +15,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/shimat/LibSVMsharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/shimat/LibSVMsharp.git</RepositoryUrl>
-    <Description>Some text.</Description>
+    <Description>.NET wrapper of LibSVM</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
