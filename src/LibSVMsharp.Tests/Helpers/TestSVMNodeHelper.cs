@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace LibSVMSharp.Tests.Helpers;
+namespace LibSVMsharp.Tests.Helpers;
 
 [TestClass]
 public class TestSVMNodeHelper
