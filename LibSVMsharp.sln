@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSVMsharp.Examples.Classi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSVMsharp.Examples.RapidPrediction", "examples\LibSVMsharp.Examples.RapidPrediction\LibSVMsharp.Examples.RapidPrediction.csproj", "{FFDF7EA5-53DA-4DF7-9DD8-E4E7DE2B5AB6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSVMSharp.Tests", "src\LibSVMSharp.Tests\LibSVMSharp.Tests.csproj", "{2DE0BD3C-C37B-4B23-9533-2F91C1DD15C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibSVMsharp.Tests", "src\LibSVMsharp.Tests\LibSVMsharp.Tests.csproj", "{2DE0BD3C-C37B-4B23-9533-2F91C1DD15C3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F41B08D2-3D78-401E-9773-CA850D7744CD}"
 	ProjectSection(SolutionItems) = preProject
