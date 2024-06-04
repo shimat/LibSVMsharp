@@ -19,11 +19,6 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  
   <ItemGroup>
     <None Include="LIBSVM_COPYRIGHT">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
