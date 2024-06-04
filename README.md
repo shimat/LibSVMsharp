@@ -1,3 +1,5 @@
+[![Github Actions Status](https://github.com/shimat/LibSVMsharp/workflows/Test/badge.svg)](https://github.com/shimat/LibSVMsharp/actions)  [![NuGet package](https://badge.fury.io/nu/LibSVMsharpCore.svg)](https://badge.fury.io/nu/LibSVMsharpCore)
+
 ## LibSVMsharp
 
 LibSVMsharp is a simple and easy-to-use C# wrapper for Support Vector Machines. 
