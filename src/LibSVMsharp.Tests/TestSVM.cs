@@ -30,24 +30,21 @@ public class TestSVM
     [ExpectedException(typeof(ArgumentNullException))]
     public void SVM_CrossValidation_ProblemIsNull_ThrowsException()
     {
-        double[] target;
-        SVM.CrossValidation(null, new SVMParameter(), 5, out target);
+        SVM.CrossValidation(null, new SVMParameter(), 5, out var target);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
     public void SVM_CrossValidation_ParameterIsNull_ThrowsException()
     {
-        double[] target;
-        SVM.CrossValidation(new SVMProblem(), null, 5, out target);
+        SVM.CrossValidation(new SVMProblem(), null, 5, out var target);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentOutOfRangeException))]
     public void SVM_CrossValidation_FoldNumberIsOutOfRange_ThrowsException()
     {
-        double[] target;
-        SVM.CrossValidation(new SVMProblem(), new SVMParameter(), 1, out target);
+        SVM.CrossValidation(new SVMProblem(), new SVMParameter(), 1, out var target);
     }
 
     //[TestMethod]
@@ -59,71 +56,73 @@ public class TestSVM
     [TestMethod]
     public void SVM_SaveModel_ModelIsNull_ReturnsFalse()
     {
-        bool success = SVM.SaveModel(null, Contants.CORRECT_MODEL_PATH_TO_BE_SAVED);
-
+        var success = SVM.SaveModel(null, Contants.CORRECT_MODEL_PATH_TO_BE_SAVED);
         Assert.IsFalse(success);
     }
 
     [TestMethod]
     public void SVM_SaveModel_FilenameIsInvalid_ReturnsFalse()
     {
-        bool success = SVM.SaveModel(new SVMModel(), "");
-
+        var success = SVM.SaveModel(new SVMModel(), "");
         Assert.IsFalse(success);
     }
 
-    //[TestMethod]
+    [TestMethod]
     public void SVM_SaveModel_Correct()
     {
-
+        var model = SVM.LoadModel(Contants.CORRECT_MODEL_PATH_TO_BE_LOADED);
+        Assert.IsNotNull(model);
+        var success = SVM.SaveModel(model, Contants.CORRECT_MODEL_PATH_TO_BE_SAVED);
+        Assert.IsTrue(success);
     }
 
     [TestMethod]
     public void SVM_LoadModel_FilenameIsInvalid_ReturnsNull()
     {
-        SVM.LoadModel("");
+        Assert.IsNull(SVM.LoadModel(""));
     }
 
     [TestMethod]
     public void SVM_LoadModel_FilenameDoesNotExist_ReturnsNull()
     {
-        SVM.LoadModel(Contants.WRONG_MODEL_PATH_TO_BE_LOADED);
+        Assert.IsFalse(System.IO.File.Exists(Contants.WRONG_MODEL_PATH_TO_BE_LOADED));
+        Assert.IsNull(SVM.LoadModel(Contants.WRONG_MODEL_PATH_TO_BE_LOADED));
     }
 
-    //[TestMethod]
+    [TestMethod]
     public void SVM_LoadModel_ModelFileIsInvalid_ReturnsNull()
     {
-
+        Assert.IsTrue(System.IO.File.Exists(Contants.INVALID_MODEL_PATH_TO_BE_LOADED));
+        Assert.IsNull(SVM.LoadModel(Contants.INVALID_MODEL_PATH_TO_BE_LOADED));
     }
 
-    //[TestMethod]
+    [TestMethod]
     public void SVM_LoadModel_Correct()
     {
-
+        var model = SVM.LoadModel(Contants.CORRECT_MODEL_PATH_TO_BE_LOADED);
+        Assert.IsNotNull(model);
+        Assert.IsNotNull(model.Labels);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
     public void SVM_PredictValues_ModelIsNull_ThrowsException()
     {
-        double[] values;
-        SVM.PredictValues(null, new SVMNode[5], out values);
+        SVM.PredictValues(null, new SVMNode[5], out var values);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
     public void SVM_PredictValues_ModelIsZero_ThrowsException()
     {
-        double[] values;
-        SVM.PredictValues(IntPtr.Zero, new SVMNode[5], out values);
+        SVM.PredictValues(IntPtr.Zero, new SVMNode[5], out var values);
     }
 
     [TestMethod]
     [ExpectedException(typeof(ArgumentNullException))]
     public void SVM_PredictValues_InputVectorIsNull_ThrowsException()
     {
-        double[] values;
-        SVM.PredictValues(new SVMModel(), null, out values);
+        SVM.PredictValues(new SVMModel(), null, out var values);
     }
 
     //[TestMethod]
