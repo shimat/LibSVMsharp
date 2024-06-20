@@ -1,0 +1,4 @@
+svm_type xxx
+kernel_type 1111
+gamma yyyy
+nr_class dddd
