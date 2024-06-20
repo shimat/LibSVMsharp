@@ -10,7 +10,7 @@ namespace LibSVMsharp.Core;
 /// </summary>
 public static class libsvm
 {
-    public static readonly string VERSION = "3.23";
+    public static readonly string VERSION = "3.32";
 
     /// <param name="prob">svm_problem</param>
     /// <param name="param">svm_parameter</param>

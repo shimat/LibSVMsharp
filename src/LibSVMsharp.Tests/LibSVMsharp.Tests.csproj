@@ -28,4 +28,21 @@
     <Compile Remove="Extensions\SVMModelExtensionsTests.cs" />
     <Compile Remove="Extensions\SVMNodeExtensionsTests.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Models\invalid_model.txt" />
+    <None Remove="Models\wine_model.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\*.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\LibSVMsharp\native\liblibsvm.so" Link="liblibsvm.so">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\LibSVMsharp\native\libsvm.dll" Link="libsvm.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
